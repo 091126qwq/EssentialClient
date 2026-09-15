@@ -55,8 +55,7 @@ public abstract class ClientPacketListenerMixin extends ClientCommonPacketListen
 
     @Unique
     private void handleInvalidChat(ClientboundPlayerChatPacket packet) {
-        Component message = packet.unsignedContent() == null ?
-            Component.literal(packet.body().content()) : packet.unsignedContent();
+        Component message = packet.unsignedContent().orElseGet(() -> Component.literal(packet.body().content()));
         this.minecraft.gui.chatListener().handleDisguisedChatMessage(message, packet.chatType());
     }
 }

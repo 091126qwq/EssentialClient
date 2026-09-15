@@ -1,15 +1,15 @@
 [versions]
-minecraft     = "26.2"
-fabric-loader = "0.19.3"
-fabric-api    = "0.152.1+26.2"
-fabric-kotlin = "1.13.12+kotlin.2.4.0"
-keybinds      = "0.5.0+26.2"
-yacl          = "3.9.4+26.2-fabric"
+minecraft     = "26.3"
+fabric-loader = "0.19.5"
+fabric-api    = "0.160.5+26.3"
+fabric-kotlin = "1.14.1+kotlin.2.4.20"
+keybinds      = "0.6.2+26.3"
+yacl          = "3.9.6+26.2-fabric"
 
 # Compatability
-mod-menu      = "20.0.0-beta.2"
+mod-menu      = "21.0.0-beta.1"
 carpet        = "26.2"
-chunk-debug   = "2.8.0+26.2"
+chunk-debug   = "2.9.0+26.3"
 sodium        = "mc26.2-0.9.0-fabric"
 
 # Runtime
@@ -17,7 +17,7 @@ dev-auth      = "1.2.2"
 
 # Plugins
 fabric-loom   = "1.17-SNAPSHOT"
-mod-publish   = "1.1.0"
+mod-publish   = "2.2.0"
 
 [libraries]
 minecraft     = { module = "com.mojang:minecraft"                    , version.ref = "minecraft" }

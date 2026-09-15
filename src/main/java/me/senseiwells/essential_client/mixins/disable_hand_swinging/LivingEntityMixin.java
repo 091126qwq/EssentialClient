@@ -10,12 +10,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
     @Inject(
-        method = "getAttackAnim",
+        method = "getSwingAnimation",
         at = @At("HEAD"),
         cancellable = true
     )
     private void overwriteAttackAnim(
-        float a,
+        float partialTicks,
         CallbackInfoReturnable<Float> cir
     ) {
         if (EssentialClientConfig.getInstance().getDisableHandSwinging()) {

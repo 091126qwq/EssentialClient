@@ -197,12 +197,12 @@ public abstract class DefaultFluidRenderMixin {
 		ColorProvider<FluidState> colorProvider,
 		FluidModel sprites,
 		CallbackInfo ci,
-		@Local(name = "dir") Direction direction, 
+		@Local(name = "dir") Direction dir,
 		@Share("shouldRenderFluid") LocalBooleanRef shouldRenderFluid, 
 		@Share("shouldRenderHighlight") LocalBooleanRef shouldRenderHighlight, 
 		@Share("shouldRenderHighlightFace") LocalBooleanRef shouldRenderHighlightFace
 	) {
-		FluidState neighbor = level.getFluidState(blockPos.relative(direction));
+		FluidState neighbor = level.getFluidState(blockPos.relative(dir));
 		boolean isNeighborSameFluid = neighbor.getType().isSame(fluidState.getType());
 		shouldRenderFluid.set(!isNeighborSameFluid);
 		shouldRenderHighlightFace.set(

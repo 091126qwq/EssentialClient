@@ -164,12 +164,12 @@ public abstract class FluidRendererMixin {
 		BlockState blockState,
 		FluidState fluidState,
 		CallbackInfo ci,
-		@Local(name = "faceDir") Direction direction,
+		@Local(name = "faceDir") Direction faceDir,
 		@Share("shouldRenderFluid") LocalBooleanRef shouldRenderFluid,
 		@Share("shouldRenderHighlight") LocalBooleanRef shouldRenderHighlight,
 		@Share("shouldRenderHighlightFace") LocalBooleanRef shouldRenderHighlightFace
 	) {
-		FluidState neighbor = level.getFluidState(pos.relative(direction));
+		FluidState neighbor = level.getFluidState(pos.relative(faceDir));
 		boolean isNeighborSameFluid = isNeighborSameFluid(fluidState, neighbor);
 		shouldRenderFluid.set(!isNeighborSameFluid);
 		shouldRenderHighlightFace.set(
