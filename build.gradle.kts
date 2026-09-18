@@ -23,7 +23,7 @@ repositories {
     mavenLocal()
 }
 
-val modVersion = "2.7.1"
+val modVersion = "2.8.0"
 val releaseVersion = "${modVersion}+${libs.versions.minecraft.get()}"
 version = releaseVersion
 group = "me.senseiwells"
@@ -79,7 +79,7 @@ tasks {
     publishMods {
         file = jar.get().archiveFile
         changelog = """
-        - Update to 26.2
+        - Update to 26.3
         """.trimIndent()
         type = STABLE
         modLoaders.add("fabric")
