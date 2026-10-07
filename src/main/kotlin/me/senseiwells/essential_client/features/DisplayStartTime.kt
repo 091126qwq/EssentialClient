@@ -1,6 +1,6 @@
 package me.senseiwells.essential_client.features
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import me.senseiwells.essential_client.EssentialClientConfig
 import net.minecraft.client.gui.Font
 import net.minecraft.client.gui.GuiGraphics
