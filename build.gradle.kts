@@ -43,7 +43,7 @@ dependencies {
     modImplementation(libs.yacl)
     include(modImplementation(libs.keybinds.get())!!)
 
-    modCompileOnly(libs.carpet)
+    modCompileOnly("maven.modrinth:TQTTVgYE:aVB2lYQQ")
     modCompileOnly(libs.chunk.debug)
     modCompileOnly(libs.sodium)
 
