@@ -4,7 +4,7 @@ import carpet.api.settings.CarpetRule
 import it.unimi.dsi.fastutil.objects.Object2ObjectAVLTreeMap
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlinx.datetime.toKotlinInstant
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
