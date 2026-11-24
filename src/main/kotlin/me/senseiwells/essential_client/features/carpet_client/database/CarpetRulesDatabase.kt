@@ -4,7 +4,6 @@ import carpet.api.settings.CarpetRule
 import it.unimi.dsi.fastutil.objects.Object2ObjectAVLTreeMap
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
-import kotlin.time.Clock
 import kotlinx.datetime.toKotlinInstant
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
@@ -23,6 +22,8 @@ import net.minecraft.client.Minecraft
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URI
+import java.time.Duration
+import java.time.Instant
 import java.util.concurrent.CompletableFuture
 import java.util.function.Supplier
 import kotlin.io.path.getLastModifiedTime
@@ -86,9 +87,9 @@ object CarpetRulesDatabase {
 
     private fun getCarpetRules(): List<CarpetRuleData> {
         try {
-            val lastModified = this.cache.getLastModifiedTime().toInstant().toKotlinInstant()
-            val duration = lastModified.minus(Clock.System.now())
-            if (duration.inWholeHours < 10) {
+            val lastModified = this.cache.getLastModifiedTime().toInstant()
+            val duration = Duration.between(Instant.now(), lastModified)
+            if (duration.toHours() < 10) {
                 val result = this.readCarpetRules()
                 if (result.isSuccess) {
                     return result.getOrThrow()
